@@ -39,7 +39,7 @@ mod_intro_ui <- function(id) {
       br(),
       span(
         "A detailed explanation of the checklist is available in the ",
-        a("publication.", href = "https://osf.io/preprints/psyarxiv/g3m5f", target = "_blank")
+        a("publication.", href = "https://link.springer.com/article/10.1007/s43681-025-00768-8", target = "_blank")
       )
     )
   })))
