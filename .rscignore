@@ -1,0 +1,9 @@
+dev/
+tests/
+data-raw/
+README.Rmd
+.Rhistory
+.RData
+.Rproj.user/
+renv/
+manifest.json

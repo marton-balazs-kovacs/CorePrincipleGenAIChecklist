@@ -1,11 +1,10 @@
 name: CorePrincipleGenAIChecklist
 title: CorePrincipleGenAIChecklist
-username:
+username: martonbalazskovacs
 account: martonbalazskovacs
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 14931780
-bundleId: 11935448
+bundleId: 11935563
 url: https://martonbalazskovacs.shinyapps.io/CorePrincipleGenAIChecklist/
-asMultiple: FALSE
-asStatic: FALSE
+version: 1

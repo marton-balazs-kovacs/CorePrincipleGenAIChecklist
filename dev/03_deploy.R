@@ -41,19 +41,28 @@ golem::add_dockerfile_with_renv_shinyproxy()
 
 # Deploy to Posit Connect or ShinyApps.io
 # In command line.
+r_dir_files <- list.files(
+  "R",
+  pattern = "\\.(R|r|rda|RData)$",
+  full.names = TRUE,
+  recursive = TRUE
+)
+
+app_files <- c(
+  "app.R",
+  "DESCRIPTION",
+  "NAMESPACE",
+  r_dir_files,
+  list.files("inst", full.names = TRUE, recursive = TRUE)
+)
+d <- rsconnect::deployments(".")
+app_id <- d$appId[match(desc::desc_get_field("Package"), d$name)]
 rsconnect::deployApp(
   appName = desc::desc_get_field("Package"),
   appTitle = desc::desc_get_field("Package"),
-  appFiles = c(
-    # Add any additional files unique to your app here.
-    "R/",
-    "inst/",
-    "data/",
-    "NAMESPACE",
-    "DESCRIPTION",
-    "app.R"
-  ),
-  appId = rsconnect::deployments(".")$appID,
+  appPrimaryDoc = "app.R",
+  appFiles = app_files,
+  appId = app_id,
   lint = FALSE,
   forceUpdate = TRUE
 )
